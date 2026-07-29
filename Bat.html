@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bat-Dev | Inicio de sesión</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+
+.login{
+
+width:380px;
+background:#1e293b;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,255,120,.2);
+
+}
+
+.logo{
+
+font-size:70px;
+text-align:center;
+
+}
+
+h1{
+
+color:#22c55e;
+text-align:center;
+margin:10px 0;
+
+}
+
+p{
+
+text-align:center;
+color:#cbd5e1;
+margin-bottom:30px;
+
+}
+
+input{
+
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#334155;
+border:none;
+border-radius:10px;
+color:white;
+font-size:15px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+background:#22c55e;
+border:none;
+border-radius:10px;
+font-size:17px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#16a34a;
+
+}
+
+.info{
+
+margin-top:20px;
+color:white;
+
+}
+
+.progreso{
+
+height:10px;
+background:#334155;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+.progreso div{
+
+height:100%;
+width:96%;
+background:#22c55e;
+
+}
+
+.estado{
+
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login">
+
+<div class="logo">🦇</div>
+
+<h1>Bat-Dev</h1>
+
+<p>Sistema Inteligente de Ciberseguridad</p>
+
+<input id="usuario" placeholder="Usuario">
+
+<input id="clave" type="password" placeholder="Contraseña">
+
+<button onclick="login()">Iniciar sesión</button>
+
+<div class="info">
+
+<div class="estado">
+
+<span>Protección</span>
+
+<span>96%</span>
+
+</div>
+
+<div class="progreso">
+
+<div></div>
+
+</div>
+
+<div class="estado">
+
+<span>Amenazas bloqueadas</span>
+
+<span id="contador">0</span>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let amenazas=0;
+
+setInterval(()=>{
+
+amenazas++;
+
+document.getElementById("contador").innerHTML=amenazas;
+
+},1500);
+
+function login(){
+
+let u=document.getElementById("usuario").value;
+let c=document.getElementById("clave").value;
+
+if(u=="admin" && c=="1234"){
+
+window.location="dashboard.html";
+
+}else{
+
+alert("Usuario: admin\nContraseña: 1234");
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
